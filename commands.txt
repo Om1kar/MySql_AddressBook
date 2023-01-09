@@ -1,0 +1,28 @@
+create database addressbookdb;
+use addressbookdb;
+Create table AddressBook(firstName varchar(50),lastName varchar(50),address varchar(50)
+,city varchar(50),state varchar(50),zip int,phoneNumber int,email varchar(50),
+primary key(firstName)
+);
+insert into AddressBook(firstName,lastName,address,city,state,zip,phoneNumber,email)
+values('Omkar','Dudhewar','Wani','Yavatmal','Maharashtra','445304','1234','omkardudhewar@gmail.com');
+insert into AddressBook(firstName,lastName,address,city,state,zip,phoneNumber,email)
+values('Shravan','Dudhewar','Nagpur','Wardha','Maharashtra','440001','12345','shravandudhewar@gmail.com');
+update Addressbook set address = 'Akola', city = 'Bramhapuri'
+where firstName = 'Shravan';
+delete from Addressbook where firstName = 'Shravan';
+insert into AddressBook(firstName,lastName,address,city,state,zip,phoneNumber,email)
+values('Sarthak','Dudhewar','Wani','Yavatmal','Maharashtra','445304','1234','omkardudhewar@gmail.com');
+insert into AddressBook(firstName,lastName,address,city,state,zip,phoneNumber,email)
+values('Shravan','Dudhewar','Nagpur','Wardha','Maharashtra','440001','12345','shravandudhewar@gmail.com');
+select city,state from AddressBook where firstName = 'Omkar';
+select count(city = 'Yavatmal')from AddressBook;
+select count(state = 'Maharashtra')from AddressBook;
+select firstName from AddressBook order by firstName asc;
+alter table addressdb.addressbook add age int;
+alter table addressdb.addressbook add fatherName varchar(50);
+alter table addressdb.addressbook add qualification varchar(50);
+select sum(case when age is null then 0 else 1 end) from  addressdb.addressbook;
+select sum(case when fatherName is null then 0 else 1 end) from  addressdb.addressbook;
+select sum(case when qualification is null then 0 else 1 end) from  addressdb.addressbook;
+select*from AddressBook;
